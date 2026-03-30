@@ -22,6 +22,8 @@
   /* ナビ・ヘッダー切替：参考LP風にゆるやかに（Material 標準イージング） */
   --ease-nav: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-nav: 0.45s;
+  /* body 背景画像の上に重ねる白（0=なし、1=真っ白に近い） */
+  --site-bg-whiten: 0.28;
 }
 
 *,
@@ -41,17 +43,28 @@ main section[id] {
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: var(--font);
   font-size: 14px;
   line-height: 1.6;
   color: var(--color-text);
   background-color: #1a1f2e;
-  background-image: url("../images/site-bg.jpg");
+  background-image: url("../images/site-bg.jpg?v=2");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+/* 背景画像の上に薄い白を重ねる（body に filter すると文字もかかるため擬似要素で分離） */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgb(255 255 255 / var(--site-bg-whiten));
 }
 
 img {
@@ -66,6 +79,8 @@ a {
 }
 
 .page {
+  position: relative;
+  z-index: 1;
   max-width: var(--page-max);
   margin: 0 auto;
   background: var(--color-bg);
@@ -320,10 +335,7 @@ a {
     padding: 0px;
     width: 100%;
     text-align: left;
-    background: rgb(255 255 255 / 0%);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-  }
+    }
 
   /* レール内ナビ：スクロール前後で同一の色・トランジション（site-header--scrolled に依存しない） */
   .site-header__rail .nav-desktop a {
@@ -334,25 +346,21 @@ a {
     line-height: 1.45;
     max-width: 14em;
     text-align: right;
-    color: rgba(255, 255, 255, 0.72);
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+    color: var(--color-text);
+    text-shadow: none;
     transition:
       color var(--duration-nav) var(--ease-nav),
-      font-weight 0.3s var(--ease-nav),
-      text-shadow var(--duration-nav) var(--ease-nav);
+      font-weight 0.3s var(--ease-nav);
   }
 
   .site-header__rail .nav-desktop a:hover {
-    color: rgba(255, 255, 255, 0.96);
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    color: #0a0a0a;
   }
 
   .site-header__rail .nav-desktop a.is-active {
-    color: #fff;
+    color: #0a0a0a;
     font-weight: 700;
-    text-shadow:
-      0 1px 6px rgba(0, 0, 0, 0.45),
-      0 0 18px rgba(255, 255, 255, 0.12);
+    text-shadow: none;
   }
 
   /* 無料相談：黒背景・白文字のピル型（当初のボタン） */
@@ -399,9 +407,6 @@ a {
     padding: 4px 0 0;
     width: 100%;
     row-gap: 6px;
-    background: rgb(255 255 255 / 0%);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
   }
 
   .site-header__rail .sns-icon {
@@ -418,11 +423,6 @@ a {
 
   .site-header__rail .sns-icon img {
     transition: filter var(--duration-nav) var(--ease-nav);
-  }
-
-  /* X：常にレール上で視認性が出るよう白系に統一（スクロール前後で切り替えない） */
-  .site-header__rail .sns-icon--x img {
-    filter: brightness(0) invert(1);
   }
 
   .menu-toggle {
