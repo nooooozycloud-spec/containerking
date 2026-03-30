@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>コンテナLPサイト | コンテナハウス</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <input
+          id="nav-toggle"
+          type="checkbox"
+          class="visually-hidden"
+          aria-hidden="true"
+        />
+        <div class="site-header__row">
+          <a class="logo" href="#">LOGO</a>
+          <div
+            class="site-header__rail"
+            aria-label="メインメニュー・ご連絡"
+          >
+            <nav class="nav-desktop" aria-label="メイン">
+              <a href="#features">コンテナハウスの特徴</a>
+              <a href="#pricing">コンテナサイズ・価格表</a>
+              <a href="#cases">施工事例</a>
+              <a href="#custom">コンテナのカスタム例</a>
+              <a href="#flow">ご注文から納品までの流れ</a>
+              <a href="#contact">無料相談・お問い合わせ</a>
+            </nav>
+            <a class="btn btn--primary site-header__rail-cta" href="#contact"
+              >無料相談</a
+            >
+            <div class="site-header__sns sns-row">
+              <a class="sns-icon" href="#" aria-label="LINE"
+                ><img src="images/LINE.svg" alt=""
+              /></a>
+              <a class="sns-icon sns-icon--x" href="#" aria-label="X"
+                ><img src="images/X.svg" alt=""
+              /></a>
+              <a class="sns-icon" href="#" aria-label="Instagram"
+                ><img src="images/Instagram.svg" alt=""
+              /></a>
+              <a class="sns-icon" href="#" aria-label="TikTok"
+                ><img src="images/TikTok.svg" alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="menu-toggle">
+            <a class="btn btn--primary" href="#contact">無料相談</a>
+            <label for="nav-toggle" class="menu-btn" aria-label="メニューを開く">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+        </div>
+        <label
+          class="nav-drawer-backdrop"
+          for="nav-toggle"
+          aria-hidden="true"
+        ></label>
+        <nav
+          class="nav-scroll nav-scroll--mobile nav-drawer"
+          id="main-nav"
+          aria-label="メイン"
+        >
+          <div class="nav-drawer__bar">
+            <label
+              for="nav-toggle"
+              class="menu-btn nav-drawer__close"
+              aria-label="メニューを閉じる"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+          <div class="nav-scroll__inner">
+            <a href="#features">コンテナハウスの特徴</a>
+            <a href="#pricing">コンテナサイズ・価格表</a>
+            <a href="#cases">施工事例</a>
+            <a href="#custom">コンテナのカスタム例</a>
+            <a href="#flow">ご注文から納品までの流れ</a>
+            <a href="#contact">無料相談・お問い合わせ</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-label="メインビジュアル">
+          <div class="hero__bg">
+            <img
+              src="images/hero.png"
+              alt="モダンなコンテナハウスの外観"
+              width="960"
+              height="450"
+            />
+          </div>
+          <div class="hero__overlay" aria-hidden="true"></div>
+          <div class="hero__logo" aria-hidden="true">LOGO</div>
+          <div class="hero__content">
+            <h1>コンテナハウスで、あなたの夢をカタチに。</h1>
+            <p class="hero__lead">
+              低コストで叶える高品質のコンテナハウス。自由空間で高いデザインを特徴とし、お客様の夢を
+              XXXXがカタチに仕上げ、快適な空間をお届けします。
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--hero-primary" href="#contact"
+                >無料相談・お見積り</a
+              >
+              <a class="btn btn--hero-outline" href="#cases">施工事例を見る</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--muted" id="features">
+          <div class="wrap">
+            <h2 class="section__title">コンテナハウスの特徴</h2>
+            <hr class="section__rule" />
+            <div class="feature-stack">
+              <article class="feature-card">
+                <h3>耐久性・耐震性</h3>
+                <p>
+                  木造住宅に比べ高い耐久性があり地震や災害に強く、災害地ではシェルターとしても導入されるほどです。海上輸送用としても利用されており、過酷な環境にも耐えられる構造になっています。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3>短納期</h3>
+                <p>
+                  骨組みから建てずに躯体がほぼ完成しているため早期の納品が可能です。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3>高いデザイン性</h3>
+                <p>
+                  組み合わせる個数と組み合わせ方で自由な空間を構築できます。さらに建設後、拡張したい場合は増設することも可能です。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3>移設可能</h3>
+                <p>
+                  万が一の引っ越しや、用途変更などの場合でも移設が可能です。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3>快適な室温</h3>
+                <p>
+                  当社が作るコンテナハウスは断熱材にもこだわりがあり、一年を通して快適な室温を保つことができます。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--price" id="pricing">
+          <div class="wrap">
+            <h2 class="section__title">コンテナサイズ・価格表</h2>
+            <hr class="section__rule" />
+            <p class="pricing-note">【施工例内装仕上げ価格】（新品コンテナ）</p>
+
+            <article class="price-block">
+              <div class="price-block__media">
+                <img
+                  src="images/12FT コンテナ.jpg"
+                  alt="12FTコンテナ"
+                  width="640"
+                  height="400"
+                  loading="lazy"
+                />
+              </div>
+              <h3>12FT</h3>
+              <p class="size-meta">
+                コンテナサイズ: 約8平米 / 約5帖 / 約2.5坪
+              </p>
+              <div class="price-row">
+                <span class="label">倉庫</span>
+                <span
+                  ><span class="amount">¥1,700,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <div class="price-row">
+                <span class="label">事務所</span>
+                <span
+                  ><span class="amount">¥2,200,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <div class="price-row">
+                <span class="label">店舗</span>
+                <span
+                  ><span class="amount">¥2,300,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <p class="dim-note">建築用JISコンテナの価格は異なります。</p>
+              <p class="dim-note">
+                ノーマル外寸: 幅2,438mm × 長さ3,658mm × 高さ2,591
+              </p>
+              <p class="dim-note">
+                ノーマル内寸: 幅2,350mm × 長さ3,550mm × 高さ2,390
+              </p>
+            </article>
+
+            <article class="price-block">
+              <div class="price-block__media">
+                <img
+                  src="images/20FT コンテナ.jpg"
+                  alt="20FTコンテナ"
+                  width="640"
+                  height="400"
+                  loading="lazy"
+                />
+              </div>
+              <h3>20FT</h3>
+              <p class="size-meta">
+                コンテナサイズ: 約13平米 / 約8.5帖 / 約4坪
+              </p>
+              <div class="price-row">
+                <span class="label">倉庫</span>
+                <span
+                  ><span class="amount">¥2,500,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <div class="price-row">
+                <span class="label">店舗・事務所</span>
+                <span
+                  ><span class="amount">¥3,700,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <div class="price-row">
+                <span class="label">住居</span>
+                <span
+                  ><span class="amount">¥5,200,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <p class="dim-note">建築用JISコンテナの価格は異なります。</p>
+              <p class="dim-note">
+                ノーマル外寸: 幅2,438mm × 長さ6,058mm × 高さ2,591
+              </p>
+              <p class="dim-note">
+                ノーマル内寸: 幅2,330mm × 長さ5,867mm × 高さ2,350
+              </p>
+            </article>
+
+            <article class="price-block">
+              <div class="price-block__media">
+                <img
+                  src="images/40FT コンテナ.jpg"
+                  alt="40FTコンテナ"
+                  width="640"
+                  height="400"
+                  loading="lazy"
+                />
+              </div>
+              <h3>40FT</h3>
+              <p class="size-meta">
+                コンテナサイズ: 約28平米 / 約17帖 / 約9坪
+              </p>
+              <div class="price-row">
+                <span class="label">倉庫</span>
+                <span
+                  ><span class="amount">¥3,100,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <div class="price-row">
+                <span class="label">店舗・事務所</span>
+                <span
+                  ><span class="amount">¥4,800,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <div class="price-row">
+                <span class="label">住居</span>
+                <span
+                  ><span class="amount">¥6,500,000〜</span>
+                  <span class="tax">（税別）</span></span
+                >
+              </div>
+              <p class="dim-note">建築用JISコンテナの価格は異なります。</p>
+              <p class="dim-note">
+                ノーマル外寸: 幅2,438mm × 長さ12,192mm × 高さ2,591
+              </p>
+              <p class="dim-note">
+                ノーマル内寸: 幅2,330mm × 長さ12,192mm × 高さ2,350
+              </p>
+            </article>
+
+            <ul class="price-footnotes">
+              <li>・下地、内装工事込み</li>
+              <li>・開口、サッシなどの仕様により価格が異なります。</li>
+              <li>・基礎工事、電気工事、水道工事の費用は別途かかります。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section section--works" id="cases">
+          <div class="wrap">
+            <h2 class="section__title">施工事例</h2>
+            <hr class="section__rule" />
+            <p class="lead-center">
+              XXXXはカスタマイズできます。自分だけのオリジナルデザインを作りましょう。
+            </p>
+            <h3 class="section__subtitle">外観</h3>
+            <div class="card-grid" role="list">
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/事務所.jpg"
+                  alt="事務所の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">事務所</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/2階建マンション.jpg"
+                  alt="2階建マンションの施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">2階建マンション</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/精肉店.jpg"
+                  alt="精肉店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">精肉店</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/スイーツ店.jpg"
+                  alt="スイーツ店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">スイーツ店</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/無人販売店.jpg"
+                  alt="無人販売店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">無人販売店</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/弁当店.jpg"
+                  alt="弁当店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">弁当店</span>
+              </div>
+            </div>
+            <h3 class="section__subtitle">内装事例</h3>
+            <div class="card-grid" role="list">
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/住居内装.jpg"
+                  alt="住居内装の事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">住居内装</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/事務所内装.jpg"
+                  alt="事務所内装の事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">事務所内装</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/飲食店内装.jpg"
+                  alt="飲食店内装の事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">飲食店内装</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/弁当店内装.jpg"
+                  alt="弁当店内装の事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">弁当店内装</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-custom" id="custom" aria-labelledby="custom-heading">
+          <div class="wrap">
+            <div class="custom-intro">
+              <h2 class="custom-intro__pill" id="custom-heading">
+                コンテナのカスタム例
+              </h2>
+              <p class="custom-intro__text">
+                12ft〜40ftのコンテナを用途に応じてカスタマイズできます。
+              </p>
+            </div>
+            <div class="custom-list custom-list--grid">
+              <article class="custom-card">
+                <h3 class="custom-card__title">カスタム例①</h3>
+                <div class="custom-card__tags">
+                  <span class="tag tag--a">40FT</span>
+                  <span class="tag tag--b">20FT</span>
+                </div>
+              </article>
+              <article class="custom-card">
+                <h3 class="custom-card__title">カスタム例②</h3>
+                <div class="custom-card__tags">
+                  <span class="tag tag--a">40FT</span>
+                  <span class="tag tag--b">20FT</span>
+                  <span class="tag tag--b">20FT</span>
+                </div>
+              </article>
+              <article class="custom-card">
+                <h3 class="custom-card__title">カスタム例③</h3>
+                <div class="custom-card__tags">
+                  <span class="tag tag--a">40FT</span>
+                  <span class="tag tag--a">40FT</span>
+                </div>
+              </article>
+              <article class="custom-card">
+                <h3 class="custom-card__title">カスタム例④</h3>
+                <div class="custom-card__tags">
+                  <span class="tag tag--b">20FT</span>
+                  <span class="tag tag--a">40FT</span>
+                  <span class="tag tag--a">40FT</span>
+                </div>
+              </article>
+              <article class="custom-card">
+                <h3 class="custom-card__title">カスタム例⑤</h3>
+                <div class="custom-card__tags">
+                  <span class="tag tag--b">20FT</span>
+                  <span class="tag tag--b">20FT</span>
+                </div>
+              </article>
+              <article class="custom-card">
+                <h3 class="custom-card__title">カスタム例⑥</h3>
+                <div class="custom-card__tags">
+                  <span class="tag tag--b">20FT</span>
+                  <span class="tag tag--b">20FT</span>
+                  <span class="tag tag--b">20FT</span>
+                </div>
+              </article>
+            </div>
+            <div
+              class="checkpoint"
+              role="region"
+              aria-labelledby="checkpoint-heading"
+            >
+              <h3 class="visually-hidden" id="checkpoint-heading">
+                チェックポイント
+              </h3>
+              <div class="checkpoint__header">
+                <div class="checkpoint__badge" aria-hidden="true">
+                  <span class="checkpoint__badge-check">CHECK!</span>
+                  <span class="checkpoint__badge-point">★POINT★</span>
+                </div>
+                <p class="checkpoint__lead">
+                  完成後に見えない場所だからこそ、<span
+                    class="checkpoint__lead-accent"
+                    >下地加工の工程</span
+                  >をご確認いただけます。
+                </p>
+              </div>
+              <div class="checkpoint__grid">
+                <div class="checkpoint__cell">
+                  <img
+                    src="images/works_check01.png"
+                    alt="グラインダー加工"
+                    width="296"
+                    height="216"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="checkpoint__cell">
+                  <img
+                    src="images/works_check02.png"
+                    alt="溶接作業"
+                    width="296"
+                    height="216"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="checkpoint__cell">
+                  <img
+                    src="images/works_check03.png"
+                    alt="火花・溶断"
+                    width="296"
+                    height="216"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="checkpoint__cell">
+                  <img
+                    src="images/works_check04.png"
+                    alt="塗装下地"
+                    width="296"
+                    height="216"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="checkpoint__cell">
+                  <img
+                    src="images/works_check05.png"
+                    alt="防錆処理"
+                    width="296"
+                    height="216"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="checkpoint__cell">
+                  <img
+                    src="images/works_check06.png"
+                    alt="内装下地"
+                    width="296"
+                    height="216"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--flow" id="flow">
+          <div class="wrap">
+            <h2 class="section__title">ご注文から納品までの流れ</h2>
+            <hr class="section__rule section__rule--on-dark" />
+            <div class="flow">
+              <div class="flow-step">
+                <div class="flow-step__num">1</div>
+                <div>
+                  <h3>【お問い合わせ】</h3>
+                  <p>
+                    お電話、インスタ、LINE、ご来店にてお気軽にお問い合わせください。
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step__num">2</div>
+                <div>
+                  <h3>【打ち合わせ】</h3>
+                  <p>
+                    製作する仕様の詳細や用途など、ご要望に応じた内容をお聞きいたします。
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step__num">3</div>
+                <div>
+                  <h3>【現地確認】</h3>
+                  <p>
+                    設置場所や土地の広さ、コンテナ運搬用の車両搬入が可能かなどを確認いたします。
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step__num">4</div>
+                <div>
+                  <h3>【お見積り・設計】</h3>
+                  <p>
+                    打ち合わせした内容を元に、お見積りと大まかな設計図をご提案いたします。
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step__num">5</div>
+                <div>
+                  <h3>【製作・最終確認】</h3>
+                  <p>
+                    決定した図面を元に製作を行い、最終確認をして頂きます。
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step__num">6</div>
+                <div>
+                  <h3>【納品】</h3>
+                  <p>設置場所への搬入・設置を行い、納品完了となります。</p>
+                </div>
+              </div>
+            </div>
+            <p class="flow-outro">
+              XXXXは、お問い合わせから納品に至るまでお客様と打ち合わせを重ねてご要望とニーズに合うコンテナ製作を心掛けております。ご不明な点やご質問などございましたらお気軽にお問い合わせください。お客様の夢をカタチにできるようスタッフ一同全力で対応させていただきます。
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="wrap">
+            <h2 class="section__title">無料相談・お問い合わせ</h2>
+            <hr class="section__rule" />
+            <div class="contact-layout">
+              <div class="contact-box">
+                <h3>お問い合わせ方法</h3>
+                <dl>
+                  <div class="contact-row">
+                    <dt>TEL</dt>
+                    <dd>XXX-XX-XXXX</dd>
+                  </div>
+                  <div class="contact-row">
+                    <dt>MAIL</dt>
+                    <dd>xxxxx@xxxxx.com</dd>
+                  </div>
+                  <div class="contact-row">
+                    <dt>所在地</dt>
+                    <dd>
+                      〒XXX-XXXX<br />
+                      XXXX県XXXX市XXXX町 XXXX-X
+                    </dd>
+                  </div>
+                </dl>
+                <p class="contact-sns-label">SNSからもお問い合わせ可能です</p>
+                <div class="sns-row">
+                  <a class="sns-icon" href="#" aria-label="LINE"
+                    ><img src="images/LINE.svg" alt=""
+                  /></a>
+                  <a class="sns-icon sns-icon--x" href="#" aria-label="X"
+                    ><img src="images/X.svg" alt=""
+                  /></a>
+                  <a class="sns-icon" href="#" aria-label="Instagram"
+                    ><img src="images/Instagram.svg" alt=""
+                  /></a>
+                  <a class="sns-icon" href="#" aria-label="TikTok"
+                    ><img src="images/TikTok.svg" alt=""
+                  /></a>
+                </div>
+              </div>
+              <form class="form" action="#" method="post">
+                <label>お名前 <span class="req">*</span></label>
+                <input type="text" name="name" required autocomplete="name" />
+                <label>フリガナ <span class="req">*</span></label>
+                <input type="text" name="kana" required />
+                <label>メールアドレス <span class="req">*</span></label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="example@email.com"
+                  autocomplete="email"
+                />
+                <label>電話番号</label>
+                <input type="tel" name="tel" autocomplete="tel" />
+                <label>ご検討の用途</label>
+                <select name="use">
+                  <option>40FT / その他</option>
+                  <option>12FT</option>
+                  <option>20FT</option>
+                  <option>40FT</option>
+                  <option>その他</option>
+                </select>
+                <label>ご相談内容・ご質問などご自由にご記入ください</label>
+                <textarea name="message"></textarea>
+                <button class="btn btn--submit" type="submit">送信する</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand">
+          <span class="logo">LOGO</span>
+          <p class="footer-meta">
+            XXXX株式会社<br />
+            〒XXX-XXXX　XXXX県XXXX市XXXX町XXXX-X<br />
+            TELX: XXX-XX-XXXX
+          </p>
+        </div>
+        <div class="footer-sns sns-row">
+          <a class="sns-icon" href="#" aria-label="LINE"
+            ><img src="images/LINE.svg" alt=""
+          /></a>
+          <a class="sns-icon sns-icon--x" href="#" aria-label="X"
+            ><img src="images/X.svg" alt=""
+          /></a>
+          <a class="sns-icon" href="#" aria-label="Instagram"
+            ><img src="images/Instagram.svg" alt=""
+          /></a>
+          <a class="sns-icon" href="#" aria-label="TikTok"
+            ><img src="images/TikTok.svg" alt=""
+          /></a>
+        </div>
+        <div class="footer-bottom">
+          © XXXX Co.,Ltd. All rights reserved.
+        </div>
+      </footer>
+    </div>
+
+    <dialog
+      class="image-modal"
+      id="image-modal"
+      aria-labelledby="image-modal-title"
+    >
+      <h2 class="visually-hidden" id="image-modal-title">写真の拡大表示</h2>
+      <div class="image-modal__shell">
+        <div class="image-modal__panel">
+          <button
+            type="button"
+            class="image-modal__close"
+            aria-label="閉じる"
+          ></button>
+          <img class="image-modal__img" src="" alt="" />
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/header-scroll.js" defer></script>
+    <script src="js/image-modal.js" defer></script>
+  </body>
+</html>
