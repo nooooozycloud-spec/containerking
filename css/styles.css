@@ -186,7 +186,7 @@ a {
   color: var(--color-text);
 }
 
-/* 施工事例：見出し＋インデントのサブリンク（ドロワー／レール共通のベース） */
+/* 施工事例：見出し＋サブリンク（レール内 .nav-desktop のベース） */
 .nav-desktop .nav-group {
   display: flex;
   flex-direction: column;
@@ -204,33 +204,21 @@ a {
 
 .nav-desktop .nav-group__sublink {
   position: relative;
-  padding-left: 14px;
+  padding-left: 0;
   font-size: 12px;
   font-weight: 500;
   color: var(--color-text-secondary);
   white-space: nowrap;
 }
 
-.nav-desktop .nav-group__sublink::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.35em;
-  bottom: 0.35em;
-  width: 3px;
-  border-radius: 2px;
-  background: rgb(0 0 0 / 0.12);
-}
-
 .nav-desktop .nav-group__sublink::after {
   content: "";
   display: inline-block;
-  width: 6px;
-  height: 9px;
+  width: 8px;
+  height: 13px;
   margin-left: 0.35em;
   vertical-align: middle;
   background: url("../images/icon-more.svg") no-repeat center / contain;
-  opacity: 0.55;
 }
 
 /* 1201px 以上のみ表示：ビューポート右固定レール（ナビ・CTA・SNS） */
@@ -290,7 +278,8 @@ a {
     width: min(300px, 86vw);
     z-index: 200;
     margin: 0;
-    padding: 0;
+    padding: 14px 12px 16px 14px;
+    box-sizing: border-box;
     border: none;
     border-left: 1px solid var(--color-border);
     background: #fff;
@@ -298,6 +287,17 @@ a {
     transform: translateX(100%);
     pointer-events: none;
     transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  /* 白帯の内側に黒枠（参考：グローバルメニュー二重枠） */
+  .nav-drawer__panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid var(--color-text);
+    background: #fff;
+    box-sizing: border-box;
   }
 
   .nav-drawer__bar {
@@ -327,7 +327,7 @@ a {
     gap: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 8px var(--gutter) 28px;
+    padding: 12px 12px 28px;
   }
 
   .nav-drawer .nav-scroll__inner > a {
@@ -418,23 +418,21 @@ a {
   }
 }
 
-/* 1201px 以上：右固定・背景なし（テキストのみ）＋ドロワー非表示＋スクロールで色切替 */
+/* 1201px 以上：右固定レール（白カード＋内側黒枠のグローバルメニュー）＋ドロワー非表示 */
 @media (min-width: 1201px) {
   .site-header__rail {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    gap: var(--rail-gap);
+    gap: 0;
     position: fixed;
     top: 140px;
     right: 180px;
     bottom: 0;
     z-index: 150;
     width: var(--rail-width);
-    /* max-width: min(187px, 22vw); */
     min-height: 100vh;
-    /* padding: 32px 20px 28px; */
     box-sizing: border-box;
     background: none;
     border: none;
@@ -446,6 +444,36 @@ a {
     --sns-icon-size: 24px;
   }
 
+  /* PC グローバルメニュー：白外帯＋内側黒枠（モバイルドロワーと同系統） */
+  .site-header__rail-panel {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: min(288px, 30vw);
+    padding: 12px 11px 14px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+  }
+
+  .site-header__rail-panel-inner {
+    border: 3px solid var(--color-text);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  .site-header__rail-panel-inner .nav-desktop {
+    width: 100%;
+  }
+
+  .site-header__rail .nav-desktop a.nav-desktop__emphasis {
+    font-weight: 700;
+  }
+
   .nav-desktop {
     display: flex;
     flex-direction: column;
@@ -454,10 +482,10 @@ a {
     flex: 0 0 auto;
     gap: var(--rail-gap);
     margin: 0;
-    padding: 0px;
+    padding: 0;
     width: 100%;
     text-align: left;
-    }
+  }
 
   /* レール内ナビ：スクロール前後で同一の色・トランジション（site-header--scrolled に依存しない） */
   .site-header__rail .nav-desktop a {
@@ -524,7 +552,7 @@ a {
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.04em;
-    padding-left: 12px;
+    padding-left: 10px;
     margin-right: 0;
     max-width: 14em;
     text-align: right;
@@ -535,12 +563,6 @@ a {
     transition:
       color var(--duration-nav) var(--ease-nav),
       font-weight 0.3s var(--ease-nav);
-  }
-
-  .site-header__rail .nav-desktop .nav-group__sublink::before {
-    top: 0.25em;
-    bottom: 0.25em;
-    background: rgb(0 0 0 / 0.14);
   }
 
   .site-header__rail .nav-desktop .nav-group__sublink:hover {
@@ -568,14 +590,13 @@ a {
     background: #0a0a0a;
     color: #fff;
     border: none;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     transition:
       opacity var(--duration-nav) var(--ease-nav),
       transform 0.35s var(--ease-nav),
       box-shadow var(--duration-nav) var(--ease-nav);
     text-shadow: none;
     letter-spacing: 0.1em;
-    margin: 20px 0 0;
+    margin: 0;
   }
 
   .site-header__rail a.site-header__rail-cta.btn--primary:hover {
@@ -593,7 +614,7 @@ a {
     align-items: center;
     gap: 0 16px;
     margin: 0;
-    padding: 4px 0 0;
+    padding: 0;
     width: 100%;
     row-gap: 6px;
   }

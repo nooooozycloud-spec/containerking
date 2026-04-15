@@ -38,10 +38,14 @@
             class="site-header__rail"
             aria-label="メインメニュー・ご連絡"
           >
-            <nav class="nav-desktop" aria-label="メイン">
-              <a href="#features">コンテナハウスの特徴</a>
-              <a href="#new-products">新商品一覧</a>
-              <a href="#pricing">コンテナサイズ・価格表</a>
+            <div class="site-header__rail-panel">
+              <div class="site-header__rail-panel-inner">
+                <nav class="nav-desktop" aria-label="メイン">
+                  <a href="#features">コンテナハウスの特徴</a>
+                  <a href="#new-products" class="nav-desktop__emphasis"
+                    >新商品一覧</a
+                  >
+                  <a href="#pricing">コンテナサイズ・価格表</a>
               <div class="nav-group" role="group" aria-label="施工事例">
                 <a href="#cases" class="nav-group__parent">施工事例</a>
                 <a href="cases-exterior.html" class="nav-group__sublink"
@@ -53,24 +57,26 @@
               </div>
               <a href="#custom">コンテナのカスタム例</a>
               <a href="#flow">ご注文から納品までの流れ</a>
-              <a href="#contact">無料相談・お問い合わせ</a>
-            </nav>
-            <a class="btn btn--primary site-header__rail-cta" href="#contact"
-              >無料相談</a
-            >
-            <div class="site-header__sns sns-row">
-              <a class="sns-icon" href="#" aria-label="LINE"
-                ><img src="images/LINE.svg" alt=""
-              /></a>
-              <a class="sns-icon sns-icon--x" href="#" aria-label="X"
-                ><img src="images/X.svg" alt=""
-              /></a>
-              <a class="sns-icon" href="#" aria-label="Instagram"
-                ><img src="images/Instagram.svg" alt=""
-              /></a>
-              <a class="sns-icon" href="#" aria-label="TikTok"
-                ><img src="images/TikTok.svg" alt=""
-              /></a>
+                  <a href="#contact">無料相談・お問い合わせ</a>
+                </nav>
+                <a class="btn btn--primary site-header__rail-cta" href="#contact"
+                  >無料相談</a
+                >
+                <div class="site-header__sns sns-row">
+                  <a class="sns-icon" href="#" aria-label="LINE"
+                    ><img src="images/LINE.svg" alt=""
+                  /></a>
+                  <a class="sns-icon sns-icon--x" href="#" aria-label="X"
+                    ><img src="images/X.svg" alt=""
+                  /></a>
+                  <a class="sns-icon" href="#" aria-label="Instagram"
+                    ><img src="images/Instagram.svg" alt=""
+                  /></a>
+                  <a class="sns-icon" href="#" aria-label="TikTok"
+                    ><img src="images/TikTok.svg" alt=""
+                  /></a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="menu-toggle">
@@ -92,18 +98,19 @@
           id="main-nav"
           aria-label="メイン"
         >
-          <div class="nav-drawer__bar">
-            <label
-              for="nav-toggle"
-              class="menu-btn nav-drawer__close"
-              aria-label="メニューを閉じる"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </label>
-          </div>
-          <div class="nav-scroll__inner">
+          <div class="nav-drawer__panel">
+            <div class="nav-drawer__bar">
+              <label
+                for="nav-toggle"
+                class="menu-btn nav-drawer__close"
+                aria-label="メニューを閉じる"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
+            </div>
+            <div class="nav-scroll__inner">
             <a href="#features">コンテナハウスの特徴</a>
             <a href="#new-products">新商品一覧</a>
             <a href="#pricing">コンテナサイズ・価格表</a>
@@ -119,6 +126,7 @@
             <a href="#custom">コンテナのカスタム例</a>
             <a href="#flow">ご注文から納品までの流れ</a>
             <a href="#contact">無料相談・お問い合わせ</a>
+            </div>
           </div>
         </nav>
       </header>
