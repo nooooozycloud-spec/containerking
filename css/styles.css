@@ -470,24 +470,20 @@ a {
     width: 100%;
   }
 
-  .site-header__rail .nav-desktop a.nav-desktop__emphasis {
-    font-weight: 700;
-  }
-
   .nav-desktop {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     flex: 0 0 auto;
-    gap: var(--rail-gap);
+    gap: 8px;
     margin: 0;
-    padding: 0;
+    padding: 0 0 20px;
     width: 100%;
     text-align: left;
   }
 
-  /* レール内ナビ：スクロール前後で同一の色・トランジション（site-header--scrolled に依存しない） */
+  /* レール内ナビ：ドロワー（.nav-drawer .nav-scroll__inner > a 等）と同系のホバー（padding-left スライド） */
   .site-header__rail .nav-desktop a {
     font-size: 14px;
     font-weight: 500;
@@ -498,22 +494,26 @@ a {
     text-align: right;
     color: var(--color-text);
     text-shadow: none;
-    transition:
-      color var(--duration-nav) var(--ease-nav),
-      font-weight 0.3s var(--ease-nav);
   }
 
-  .site-header__rail .nav-desktop a:hover {
-    color: #0a0a0a;
+  .site-header__rail .nav-desktop > a {
+    display: block;
+    padding: 4px 4px;
+    transition: color 0.2s, padding-left 0.2s;
   }
 
-  .site-header__rail .nav-desktop a.is-active {
+  .site-header__rail .nav-desktop > a:hover {
+    color: var(--color-text);
+    padding-left: 8px;
+  }
+
+  .site-header__rail .nav-desktop > a.is-active {
     color: #0a0a0a;
     font-weight: 700;
     text-shadow: none;
   }
 
-  .site-header__rail .nav-desktop a[aria-current="page"] {
+  .site-header__rail .nav-desktop > a[aria-current="page"] {
     color: #0a0a0a;
     font-weight: 700;
     text-shadow: none;
@@ -525,6 +525,7 @@ a {
   }
 
   .site-header__rail .nav-desktop .nav-group__parent {
+    display: block;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.06em;
@@ -534,13 +535,13 @@ a {
     text-align: right;
     color: var(--color-text);
     text-shadow: none;
-    transition:
-      color var(--duration-nav) var(--ease-nav),
-      font-weight 0.3s var(--ease-nav);
+    padding: 4px 4px 0;
+    transition: color 0.2s, padding-left 0.2s;
   }
 
   .site-header__rail .nav-desktop .nav-group__parent:hover {
-    color: #0a0a0a;
+    color: var(--color-text);
+    padding-left: 8px;
   }
 
   .site-header__rail .nav-desktop .nav-group__parent.is-active {
@@ -549,10 +550,11 @@ a {
   }
 
   .site-header__rail .nav-desktop .nav-group__sublink {
+    display: block;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.04em;
-    padding-left: 10px;
+    padding: 0 4px 0 22px;
     margin-right: 0;
     max-width: 14em;
     text-align: right;
@@ -560,13 +562,12 @@ a {
     white-space: normal;
     color: var(--color-text);
     text-shadow: none;
-    transition:
-      color var(--duration-nav) var(--ease-nav),
-      font-weight 0.3s var(--ease-nav);
+    transition: color 0.2s, padding-left 0.2s;
   }
 
   .site-header__rail .nav-desktop .nav-group__sublink:hover {
-    color: #0a0a0a;
+    color: var(--color-text);
+    padding-left: 26px;
   }
 
   .site-header__rail .nav-desktop .nav-group__sublink[aria-current="page"] {
@@ -1082,6 +1083,8 @@ a {
 /* コンテナのカスタム例（Figma mobile / node 48:1820 系・ピル＋タグカード） */
 .section-custom {
   background: #fff;
+  /* 共通 .section の padding-bottom を打ち消し、次セクション（流れ）直前の白余白をなくす */
+  padding-bottom: 0;
 }
 
 .custom-intro {
@@ -1101,7 +1104,7 @@ a {
   margin-top: 28px;
   margin-left: calc(-1 * var(--gutter));
   margin-right: calc(-1 * var(--gutter));
-  padding: 22px var(--gutter) 26px;
+  padding: 60px var(--gutter) 60px;
   background: #f3f3f3;
 }
 
@@ -1805,7 +1808,7 @@ h1.section__title--cases-page {
 .section--flow {
   background: var(--color-text);
   color: #fff;
-  padding: 40px 0 32px;
+  padding: 60px 0 32px;
 }
 
 .flow {
@@ -1817,7 +1820,7 @@ h1.section__title--cases-page {
 .flow-step {
   display: grid;
   grid-template-columns: 40px 1fr;
-  gap: 14px;
+  gap: 8px;
   padding: 16px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   align-items: start;
@@ -1828,8 +1831,8 @@ h1.section__title--cases-page {
 }
 
 .flow-step__num {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: #fff;
   color: var(--color-text);
