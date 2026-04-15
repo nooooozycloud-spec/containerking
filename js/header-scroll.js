@@ -2,10 +2,15 @@
   var header = document.querySelector(".site-header");
   var hero = document.querySelector(".hero");
   var logoLink = header ? header.querySelector(".site-header__row > .logo") : null;
+
+  function hasLpSections() {
+    return !!document.getElementById("features");
+  }
   var navToggle = document.getElementById("nav-toggle");
-  var rail = document.querySelector(".site-header__rail");
-  var railNavLinks = rail
-    ? rail.querySelectorAll(".nav-desktop a[href^='#']")
+  var railNavLinks = header
+    ? header.querySelectorAll(
+        ".site-header__rail .nav-desktop a[href^='#'], .nav-drawer .nav-scroll__inner a[href^='#']"
+      )
     : null;
 
   /* 境界付近でクラスが切り替わり続けないようヒステリシス */
@@ -14,6 +19,7 @@
 
   var SPY_SECTION_IDS = [
     "features",
+    "new-products",
     "pricing",
     "cases",
     "custom",
@@ -29,7 +35,13 @@
   var LOGO_HIDE_HERO_BOTTOM = 72;
 
   function updateLogoAfterHero() {
-    if (!header || !hero) return;
+    if (!header) return;
+    /* LP 以外（施工事例サブページ等）：ヒーローが無いのでロゴは常に表示 */
+    if (!hero) {
+      header.classList.add("site-header--logo-visible");
+      if (logoLink) logoLink.removeAttribute("aria-hidden");
+      return;
+    }
     /* 1200px 以下はロゴ常時表示（CSS と併用） */
     if (!spyMq.matches) {
       header.classList.add("site-header--logo-visible");
@@ -71,12 +83,18 @@
 
   function setRailActive(id) {
     if (!railNavLinks) return;
+    var firstCurrent = true;
     railNavLinks.forEach(function (a) {
-      var href = a.getAttribute("href");
+      var href = a.getAttribute("href") || "";
       var match = href === "#" + id;
       a.classList.toggle("is-active", match);
       if (match) {
-        a.setAttribute("aria-current", "location");
+        if (firstCurrent) {
+          a.setAttribute("aria-current", "location");
+          firstCurrent = false;
+        } else {
+          a.removeAttribute("aria-current");
+        }
       } else {
         a.removeAttribute("aria-current");
       }
@@ -106,6 +124,10 @@
   }
 
   function updateScrollSpy() {
+    if (!hasLpSections()) {
+      clearRailActive();
+      return;
+    }
     if (!spyMq.matches || !railNavLinks || railNavLinks.length === 0) return;
     var y = window.scrollY || window.pageYOffset || 0;
     if (y < 72) {
@@ -196,6 +218,9 @@
   window.addEventListener("load", function () {
     updateLogoAfterHero();
     var raw = location.hash.replace(/^#/, "");
+    if (!hasLpSections()) {
+      return;
+    }
     if (raw && SPY_SECTION_IDS.indexOf(raw) !== -1) {
       setRailActive(raw);
     } else {

@@ -7,10 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="page">
@@ -22,15 +26,31 @@
           aria-hidden="true"
         />
         <div class="site-header__row">
-          <a class="logo" href="#">LOGO</a>
+          <a class="logo" href="#"
+            ><img
+              src="images/logo.png"
+              alt="コンテナハウス"
+              width="160"
+              height="40"
+              decoding="async"
+          /></a>
           <div
             class="site-header__rail"
             aria-label="メインメニュー・ご連絡"
           >
             <nav class="nav-desktop" aria-label="メイン">
               <a href="#features">コンテナハウスの特徴</a>
+              <a href="#new-products">新商品一覧</a>
               <a href="#pricing">コンテナサイズ・価格表</a>
-              <a href="#cases">施工事例</a>
+              <div class="nav-group" role="group" aria-label="施工事例">
+                <a href="#cases" class="nav-group__parent">施工事例</a>
+                <a href="cases-exterior.html" class="nav-group__sublink"
+                  >外観事例一覧</a
+                >
+                <a href="cases-interior.html" class="nav-group__sublink"
+                  >内装事例一覧</a
+                >
+              </div>
               <a href="#custom">コンテナのカスタム例</a>
               <a href="#flow">ご注文から納品までの流れ</a>
               <a href="#contact">無料相談・お問い合わせ</a>
@@ -85,8 +105,17 @@
           </div>
           <div class="nav-scroll__inner">
             <a href="#features">コンテナハウスの特徴</a>
+            <a href="#new-products">新商品一覧</a>
             <a href="#pricing">コンテナサイズ・価格表</a>
-            <a href="#cases">施工事例</a>
+            <div class="nav-group" role="group" aria-label="施工事例">
+              <a href="#cases" class="nav-group__parent">施工事例</a>
+              <a href="cases-exterior.html" class="nav-group__sublink"
+                >外観事例一覧</a
+              >
+              <a href="cases-interior.html" class="nav-group__sublink"
+                >内装事例一覧</a
+              >
+            </div>
             <a href="#custom">コンテナのカスタム例</a>
             <a href="#flow">ご注文から納品までの流れ</a>
             <a href="#contact">無料相談・お問い合わせ</a>
@@ -105,12 +134,20 @@
             />
           </div>
           <div class="hero__overlay" aria-hidden="true"></div>
-          <div class="hero__logo" aria-hidden="true">LOGO</div>
+          <div class="hero__logo" aria-hidden="true">
+            <img
+              src="images/logo_wh.png"
+              alt=""
+              width="200"
+              height="48"
+              decoding="async"
+            />
+          </div>
           <div class="hero__content">
             <h1>コンテナハウスで、あなたの夢をカタチに。</h1>
             <p class="hero__lead">
               低コストで叶える高品質のコンテナハウス。自由空間で高いデザインを特徴とし、お客様の夢を
-              XXXXがカタチに仕上げ、快適な空間をお届けします。
+              CONTAINER KINGがカタチに仕上げ、快適な空間をお届けします。
             </p>
             <div class="hero__actions">
               <a class="btn btn--primary btn--hero-primary" href="#contact"
@@ -122,9 +159,13 @@
         </section>
 
         <section class="section section--muted" id="features">
+          <h2 class="section__title">
+            <span class="section__title-ja">コンテナハウスの特徴</span>
+            <span class="section__title-en" lang="en"
+              >Features of container houses</span
+            >
+          </h2>
           <div class="wrap">
-            <h2 class="section__title">コンテナハウスの特徴</h2>
-            <hr class="section__rule" />
             <div class="feature-stack">
               <article class="feature-card">
                 <h3>耐久性・耐震性</h3>
@@ -160,13 +201,104 @@
           </div>
         </section>
 
+        <section
+          class="section section--new-products"
+          id="new-products"
+          aria-labelledby="new-products-heading"
+        >
+          <h2 class="section__title" id="new-products-heading">
+            <span class="section__title-ja">新商品一覧</span>
+            <span class="section__title-en" lang="en">New products</span>
+          </h2>
+          <div class="new-products-carousel">
+            <div class="swiper new-products-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <article class="new-product-card">
+                    <h3 class="new-product-card__title">
+                      <span class="new-product-card__pipe" aria-hidden="true"></span>
+                      20FT
+                    </h3>
+                    <div class="new-product-card__media" aria-hidden="true"></div>
+                    <p class="new-product-card__price">1,700,000円～</p>
+                    <ul class="new-product-card__list">
+                      <li>用途：飲食店舗</li>
+                      <li>
+                        コンテナ本数：20ftハイキューブコンテナ 平屋（4本）
+                      </li>
+                      <li>延べ床面積：52.62㎡</li>
+                    </ul>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="new-product-card">
+                    <h3 class="new-product-card__title">
+                      <span class="new-product-card__pipe" aria-hidden="true"></span>
+                      12FT
+                    </h3>
+                    <div class="new-product-card__media" aria-hidden="true"></div>
+                    <p class="new-product-card__price">980,000円～</p>
+                    <ul class="new-product-card__list">
+                      <li>用途：事務所・店舗</li>
+                      <li>コンテナ本数：12ft スタンダード（1本）</li>
+                      <li>延べ床面積：約7.2㎡</li>
+                    </ul>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="new-product-card">
+                    <h3 class="new-product-card__title">
+                      <span class="new-product-card__pipe" aria-hidden="true"></span>
+                      40FT
+                    </h3>
+                    <div class="new-product-card__media" aria-hidden="true"></div>
+                    <p class="new-product-card__price">2,450,000円～</p>
+                    <ul class="new-product-card__list">
+                      <li>用途：住居・拠点</li>
+                      <li>コンテナ本数：40ft ハイキューブ（2本）</li>
+                      <li>延べ床面積：約56㎡</li>
+                    </ul>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="new-product-card">
+                    <h3 class="new-product-card__title">
+                      <span class="new-product-card__pipe" aria-hidden="true"></span>
+                      20FT
+                    </h3>
+                    <div class="new-product-card__media" aria-hidden="true"></div>
+                    <p class="new-product-card__price">1,350,000円～</p>
+                    <ul class="new-product-card__list">
+                      <li>用途：物販・倉庫</li>
+                      <li>コンテナ本数：20ft（2本）</li>
+                      <li>延べ床面積：約28㎡</li>
+                    </ul>
+                  </article>
+                </div>
+              </div>
+              <div
+                class="swiper-pagination new-products-swiper__pagination"
+                aria-label="新商品スライドの位置"
+              ></div>
+            </div>
+          </div>
+        </section>
+
         <section class="section section--price" id="pricing">
+          <h2 class="section__title">
+            <span class="section__title-ja">コンテナサイズ・価格表</span>
+            <span class="section__title-en" lang="en"
+              >Container sizes &amp; pricing</span
+            >
+          </h2>
           <div class="wrap">
-            <h2 class="section__title">コンテナサイズ・価格表</h2>
-            <hr class="section__rule" />
             <p class="pricing-note">【施工例内装仕上げ価格】（新品コンテナ）</p>
 
             <article class="price-block">
+              <h3>12FT</h3>
+              <p class="size-meta">
+                コンテナサイズ: 約8平米 / 約5帖 / 約2.5坪
+              </p>
               <div class="price-block__media">
                 <img
                   src="images/12FT コンテナ.jpg"
@@ -176,28 +308,24 @@
                   loading="lazy"
                 />
               </div>
-              <h3>12FT</h3>
-              <p class="size-meta">
-                コンテナサイズ: 約8平米 / 約5帖 / 約2.5坪
-              </p>
               <div class="price-row">
                 <span class="label">倉庫</span>
                 <span
-                  ><span class="amount">¥1,700,000〜</span>
+                  ><span class="amount">1,700,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
               <div class="price-row">
                 <span class="label">事務所</span>
                 <span
-                  ><span class="amount">¥2,200,000〜</span>
+                  ><span class="amount">2,200,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
               <div class="price-row">
                 <span class="label">店舗</span>
                 <span
-                  ><span class="amount">¥2,300,000〜</span>
+                  ><span class="amount">2,300,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
@@ -211,6 +339,10 @@
             </article>
 
             <article class="price-block">
+              <h3>20FT</h3>
+              <p class="size-meta">
+                コンテナサイズ: 約13平米 / 約8.5帖 / 約4坪
+              </p>
               <div class="price-block__media">
                 <img
                   src="images/20FT コンテナ.jpg"
@@ -220,28 +352,24 @@
                   loading="lazy"
                 />
               </div>
-              <h3>20FT</h3>
-              <p class="size-meta">
-                コンテナサイズ: 約13平米 / 約8.5帖 / 約4坪
-              </p>
               <div class="price-row">
                 <span class="label">倉庫</span>
                 <span
-                  ><span class="amount">¥2,500,000〜</span>
+                  ><span class="amount">2,500,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
               <div class="price-row">
                 <span class="label">店舗・事務所</span>
                 <span
-                  ><span class="amount">¥3,700,000〜</span>
+                  ><span class="amount">3,700,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
               <div class="price-row">
                 <span class="label">住居</span>
                 <span
-                  ><span class="amount">¥5,200,000〜</span>
+                  ><span class="amount">5,200,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
@@ -255,6 +383,10 @@
             </article>
 
             <article class="price-block">
+              <h3>40FT</h3>
+              <p class="size-meta">
+                コンテナサイズ: 約28平米 / 約17帖 / 約9坪
+              </p>
               <div class="price-block__media">
                 <img
                   src="images/40FT コンテナ.jpg"
@@ -264,28 +396,24 @@
                   loading="lazy"
                 />
               </div>
-              <h3>40FT</h3>
-              <p class="size-meta">
-                コンテナサイズ: 約28平米 / 約17帖 / 約9坪
-              </p>
               <div class="price-row">
                 <span class="label">倉庫</span>
                 <span
-                  ><span class="amount">¥3,100,000〜</span>
+                  ><span class="amount">3,100,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
               <div class="price-row">
                 <span class="label">店舗・事務所</span>
                 <span
-                  ><span class="amount">¥4,800,000〜</span>
+                  ><span class="amount">4,800,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
               <div class="price-row">
                 <span class="label">住居</span>
                 <span
-                  ><span class="amount">¥6,500,000〜</span>
+                  ><span class="amount">6,500,000円～</span>
                   <span class="tax">（税別）</span></span
                 >
               </div>
@@ -307,17 +435,19 @@
         </section>
 
         <section class="section section--works" id="cases">
+          <h2 class="section__title">
+            <span class="section__title-ja">施工事例</span>
+            <span class="section__title-en" lang="en">Case studies</span>
+          </h2>
           <div class="wrap">
-            <h2 class="section__title">施工事例</h2>
-            <hr class="section__rule" />
             <p class="lead-center">
-              XXXXはカスタマイズできます。自分だけのオリジナルデザインを作りましょう。
+              CONTAINER KINGはカスタマイズできます。自分だけのオリジナルデザインを作りましょう。
             </p>
-            <h3 class="section__subtitle">外観</h3>
+            <h3 class="section__subtitle">外観事例</h3>
             <div class="card-grid" role="list">
               <div class="card card--photo" role="listitem">
                 <img
-                  src="images/事務所.jpg"
+                  src="images/事務所_3x.jpg"
                   alt="事務所の施工事例"
                   width="400"
                   height="300"
@@ -355,26 +485,17 @@
                 />
                 <span class="card__label">スイーツ店</span>
               </div>
-              <div class="card card--photo" role="listitem">
-                <img
-                  src="images/無人販売店.jpg"
-                  alt="無人販売店の施工事例"
-                  width="400"
-                  height="300"
-                  loading="lazy"
-                />
-                <span class="card__label">無人販売店</span>
-              </div>
-              <div class="card card--photo" role="listitem">
-                <img
-                  src="images/弁当店.jpg"
-                  alt="弁当店の施工事例"
-                  width="400"
-                  height="300"
-                  loading="lazy"
-                />
-                <span class="card__label">弁当店</span>
-              </div>
+            </div>
+            <div class="works-section-cta">
+              <a class="btn btn--works-more" href="cases-exterior.html"
+                >外観一覧を見る<img
+                  src="images/cases_icon.svg"
+                  alt=""
+                  class="btn--works-more__icon"
+                  width="20"
+                  height="20"
+                  decoding="async"
+              /></a>
             </div>
             <h3 class="section__subtitle">内装事例</h3>
             <div class="card-grid" role="list">
@@ -419,15 +540,29 @@
                 <span class="card__label">弁当店内装</span>
               </div>
             </div>
+            <div class="works-section-cta">
+              <a class="btn btn--works-more" href="cases-interior.html"
+                >内装事例一覧を見る<img
+                  src="images/cases_icon.svg"
+                  alt=""
+                  class="btn--works-more__icon"
+                  width="20"
+                  height="20"
+                  decoding="async"
+              /></a>
+            </div>
           </div>
         </section>
 
         <section class="section section-custom" id="custom" aria-labelledby="custom-heading">
+          <h2 class="section__title" id="custom-heading">
+            <span class="section__title-ja">コンテナのカスタム例</span>
+            <span class="section__title-en" lang="en"
+              >Container customization examples</span
+            >
+          </h2>
           <div class="wrap">
             <div class="custom-intro">
-              <h2 class="custom-intro__pill" id="custom-heading">
-                コンテナのカスタム例
-              </h2>
               <p class="custom-intro__text">
                 12ft〜40ftのコンテナを用途に応じてカスタマイズできます。
               </p>
@@ -458,9 +593,9 @@
               <article class="custom-card">
                 <h3 class="custom-card__title">カスタム例④</h3>
                 <div class="custom-card__tags">
+                  <span class="tag tag--a">40FT</span>
+                  <span class="tag tag--a">40FT</span>
                   <span class="tag tag--b">20FT</span>
-                  <span class="tag tag--a">40FT</span>
-                  <span class="tag tag--a">40FT</span>
                 </div>
               </article>
               <article class="custom-card">
@@ -566,9 +701,11 @@
         </section>
 
         <section class="section section--flow" id="flow">
+          <h2 class="section__title">
+            <span class="section__title-ja">ご注文から納品までの流れ</span>
+            <span class="section__title-en" lang="en">From order to delivery</span>
+          </h2>
           <div class="wrap">
-            <h2 class="section__title">ご注文から納品までの流れ</h2>
-            <hr class="section__rule section__rule--on-dark" />
             <div class="flow">
               <div class="flow-step">
                 <div class="flow-step__num">1</div>
@@ -624,15 +761,19 @@
               </div>
             </div>
             <p class="flow-outro">
-              XXXXは、お問い合わせから納品に至るまでお客様と打ち合わせを重ねてご要望とニーズに合うコンテナ製作を心掛けております。ご不明な点やご質問などございましたらお気軽にお問い合わせください。お客様の夢をカタチにできるようスタッフ一同全力で対応させていただきます。
+              CONTAINER KINGは、お問い合わせから納品に至るまでお客様と打ち合わせを重ねてご要望とニーズに合うコンテナ製作を心掛けております。ご不明な点やご質問などございましたらお気軽にお問い合わせください。お客様の夢をカタチにできるようスタッフ一同全力で対応させていただきます。
             </p>
           </div>
         </section>
 
         <section class="section" id="contact">
+          <h2 class="section__title">
+            <span class="section__title-ja">無料相談・お問い合わせ</span>
+            <span class="section__title-en" lang="en"
+              >Free consultation &amp; contact</span
+            >
+          </h2>
           <div class="wrap">
-            <h2 class="section__title">無料相談・お問い合わせ</h2>
-            <hr class="section__rule" />
             <div class="contact-layout">
               <div class="contact-box">
                 <h3>お問い合わせ方法</h3>
@@ -703,9 +844,16 @@
 
       <footer class="site-footer">
         <div class="footer-brand">
-          <span class="logo">LOGO</span>
+          <span class="logo"
+            ><img
+              src="images/logo_wh.png"
+              alt="コンテナハウス"
+              width="160"
+              height="40"
+              decoding="async"
+          /></span>
           <p class="footer-meta">
-            XXXX株式会社<br />
+            <span class="footer-meta__company">CONTAINER KING</span><br />
             〒XXX-XXXX　XXXX県XXXX市XXXX町XXXX-X<br />
             TELX: XXX-XX-XXXX
           </p>
@@ -721,11 +869,11 @@
             ><img src="images/Instagram.svg" alt=""
           /></a>
           <a class="sns-icon" href="#" aria-label="TikTok"
-            ><img src="images/TikTok.svg" alt=""
+            ><img src="images/tiktok_footer.svg" alt=""
           /></a>
         </div>
         <div class="footer-bottom">
-          © XXXX Co.,Ltd. All rights reserved.
+          © CONTAINER KING Co.,Ltd. All rights reserved.
         </div>
       </footer>
     </div>
@@ -736,18 +884,42 @@
       aria-labelledby="image-modal-title"
     >
       <h2 class="visually-hidden" id="image-modal-title">写真の拡大表示</h2>
+      <button
+        type="button"
+        class="image-modal__close"
+        aria-label="閉じる"
+      ></button>
       <div class="image-modal__shell">
         <div class="image-modal__panel">
-          <button
-            type="button"
-            class="image-modal__close"
-            aria-label="閉じる"
-          ></button>
-          <img class="image-modal__img" src="" alt="" />
+          <div class="image-modal__viewport">
+            <div class="image-modal__stage">
+              <img class="image-modal__img" src="" alt="" draggable="false" />
+            </div>
+          </div>
+          <p
+            class="image-modal__caption"
+            id="image-modal-caption"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+          <div class="image-modal__gallery-ui" hidden>
+            <p class="image-modal__pager" aria-live="polite" hidden></p>
+            <div
+              class="image-modal__thumbs"
+              role="tablist"
+              aria-label="施工事例のサムネイル"
+            ></div>
+          </div>
         </div>
       </div>
     </dialog>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="js/new-products-swiper.js" defer></script>
     <script src="js/header-scroll.js" defer></script>
     <script src="js/image-modal.js" defer></script>
   </body>

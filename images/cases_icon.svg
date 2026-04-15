@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="14" viewBox="0 0 10 14">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_303297" data-name="長方形 303297" width="10" height="14" transform="translate(1064 1957)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="_" data-name="&gt;" transform="translate(-1064 -1957)" clip-path="url(#clip-path)">
+    <path id="svgexport-2" d="M9.016,7.372,2.594,13.846a.525.525,0,0,1-.744,0L.984,12.98a.525.525,0,0,1,0-.744L6.168,7,.984,1.764a.525.525,0,0,1,0-.744L1.85.154a.525.525,0,0,1,.744,0L9.016,6.628A.525.525,0,0,1,9.016,7.372Z" transform="translate(1064.17 1957)" fill="#2a2a2a"/>
+  </g>
+</svg>

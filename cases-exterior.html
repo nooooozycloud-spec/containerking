@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>外観事例 | コンテナLPサイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page page--sub">
+      <header class="site-header">
+        <input
+          id="nav-toggle"
+          type="checkbox"
+          class="visually-hidden"
+          aria-hidden="true"
+        />
+        <div class="site-header__row">
+          <a class="logo" href="index.html"
+            ><img
+              src="images/logo.png"
+              alt="コンテナハウス"
+              width="160"
+              height="40"
+              decoding="async"
+          /></a>
+          <div
+            class="site-header__rail"
+            aria-label="メインメニュー・ご連絡"
+          >
+            <nav class="nav-desktop" aria-label="メイン">
+              <a href="index.html">トップ</a>
+              <a href="index.html#features">コンテナハウスの特徴</a>
+              <a href="index.html#new-products">新商品一覧</a>
+              <a href="index.html#pricing">コンテナサイズ・価格表</a>
+              <div class="nav-group" role="group" aria-label="施工事例">
+                <a href="index.html#cases" class="nav-group__parent">施工事例</a>
+                <a
+                  href="cases-exterior.html"
+                  class="nav-group__sublink"
+                  aria-current="page"
+                  >外観事例一覧</a
+                >
+                <a href="cases-interior.html" class="nav-group__sublink"
+                  >内装事例一覧</a
+                >
+              </div>
+              <a href="index.html#custom">コンテナのカスタム例</a>
+              <a href="index.html#flow">ご注文から納品までの流れ</a>
+              <a href="index.html#contact">無料相談・お問い合わせ</a>
+            </nav>
+            <a
+              class="btn btn--primary site-header__rail-cta"
+              href="index.html#contact"
+              >無料相談</a
+            >
+            <div class="site-header__sns sns-row">
+              <a class="sns-icon" href="#" aria-label="LINE"
+                ><img src="images/LINE.svg" alt=""
+              /></a>
+              <a class="sns-icon sns-icon--x" href="#" aria-label="X"
+                ><img src="images/X.svg" alt=""
+              /></a>
+              <a class="sns-icon" href="#" aria-label="Instagram"
+                ><img src="images/Instagram.svg" alt=""
+              /></a>
+              <a class="sns-icon" href="#" aria-label="TikTok"
+                ><img src="images/TikTok.svg" alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="menu-toggle">
+            <a class="btn btn--primary" href="index.html#contact">無料相談</a>
+            <label for="nav-toggle" class="menu-btn" aria-label="メニューを開く">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+        </div>
+        <label
+          class="nav-drawer-backdrop"
+          for="nav-toggle"
+          aria-hidden="true"
+        ></label>
+        <nav
+          class="nav-scroll nav-scroll--mobile nav-drawer"
+          id="main-nav"
+          aria-label="メイン"
+        >
+          <div class="nav-drawer__bar">
+            <label
+              for="nav-toggle"
+              class="menu-btn nav-drawer__close"
+              aria-label="メニューを閉じる"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+          <div class="nav-scroll__inner">
+            <a href="index.html">トップ</a>
+            <a href="index.html#features">コンテナハウスの特徴</a>
+            <a href="index.html#new-products">新商品一覧</a>
+            <a href="index.html#pricing">コンテナサイズ・価格表</a>
+            <div class="nav-group" role="group" aria-label="施工事例">
+              <a href="index.html#cases" class="nav-group__parent">施工事例</a>
+              <a
+                href="cases-exterior.html"
+                class="nav-group__sublink"
+                aria-current="page"
+                >外観事例一覧</a
+              >
+              <a href="cases-interior.html" class="nav-group__sublink"
+                >内装事例一覧</a
+              >
+            </div>
+            <a href="index.html#custom">コンテナのカスタム例</a>
+            <a href="index.html#flow">ご注文から納品までの流れ</a>
+            <a href="index.html#contact">無料相談・お問い合わせ</a>
+          </div>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="section section--works" id="exterior">
+          <h1 class="section__title section__title--cases-page">
+            <span class="section__title-ja">外観事例</span>
+            <span class="section__title-en" lang="en">Exterior cases</span>
+          </h1>
+          <div class="wrap">
+            <p class="lead-center">
+              CONTAINER KINGはカスタマイズできます。自分だけのオリジナルデザインを作りましょう。
+            </p>
+            <div class="card-grid" role="list">
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/事務所_3x.jpg"
+                  alt="事務所の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">事務所</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/2階建マンション.jpg"
+                  alt="2階建マンションの施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">2階建マンション</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/精肉店.jpg"
+                  alt="精肉店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">精肉店</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/スイーツ店.jpg"
+                  alt="スイーツ店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">スイーツ店</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/無人販売店.jpg"
+                  alt="無人販売店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">無人販売店</span>
+              </div>
+              <div class="card card--photo" role="listitem">
+                <img
+                  src="images/弁当店.jpg"
+                  alt="弁当店の施工事例"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+                <span class="card__label">弁当店</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"
+            ><img
+              src="images/logo_wh.png"
+              alt="コンテナハウス"
+              width="160"
+              height="40"
+              decoding="async"
+          /></a>
+          <p class="footer-meta">
+            <span class="footer-meta__company">CONTAINER KING</span><br />
+            〒XXX-XXXX　XXXX県XXXX市XXXX町XXXX-X<br />
+            TELX: XXX-XX-XXXX
+          </p>
+        </div>
+        <div class="footer-sns sns-row">
+          <a class="sns-icon" href="#" aria-label="LINE"
+            ><img src="images/LINE.svg" alt=""
+          /></a>
+          <a class="sns-icon sns-icon--x" href="#" aria-label="X"
+            ><img src="images/X.svg" alt=""
+          /></a>
+          <a class="sns-icon" href="#" aria-label="Instagram"
+            ><img src="images/Instagram.svg" alt=""
+          /></a>
+          <a class="sns-icon" href="#" aria-label="TikTok"
+            ><img src="images/tiktok_footer.svg" alt=""
+          /></a>
+        </div>
+        <div class="footer-bottom">
+          © XXXX Co.,Ltd. All rights reserved.
+        </div>
+      </footer>
+    </div>
+
+    <dialog
+      class="image-modal"
+      id="image-modal"
+      aria-labelledby="image-modal-title"
+    >
+      <h2 class="visually-hidden" id="image-modal-title">写真の拡大表示</h2>
+      <button
+        type="button"
+        class="image-modal__close"
+        aria-label="閉じる"
+      ></button>
+      <div class="image-modal__shell">
+        <div class="image-modal__panel">
+          <div class="image-modal__viewport">
+            <div class="image-modal__stage">
+              <img class="image-modal__img" src="" alt="" draggable="false" />
+            </div>
+          </div>
+          <p
+            class="image-modal__caption"
+            id="image-modal-caption"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+          <div class="image-modal__gallery-ui" hidden>
+            <p class="image-modal__pager" aria-live="polite" hidden></p>
+            <div
+              class="image-modal__thumbs"
+              role="tablist"
+              aria-label="施工事例のサムネイル"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/header-scroll.js" defer></script>
+    <script src="js/image-modal.js" defer></script>
+  </body>
+</html>
