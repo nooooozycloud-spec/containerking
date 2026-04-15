@@ -295,7 +295,6 @@ a {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    border: 1px solid var(--color-text);
     background: #fff;
     box-sizing: border-box;
   }
