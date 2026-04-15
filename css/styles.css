@@ -223,8 +223,13 @@ a {
 }
 
 .nav-desktop .nav-group__sublink::after {
-  content: " \003e";
-  font-weight: 400;
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 9px;
+  margin-left: 0.35em;
+  vertical-align: middle;
+  background: url("../images/icon-more.svg") no-repeat center / contain;
   opacity: 0.55;
 }
 
@@ -382,8 +387,13 @@ a {
   }
 
   .nav-drawer .nav-scroll__inner .nav-group__sublink::after {
-    content: " \003e";
-    font-weight: 400;
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 10px;
+    margin-left: 0.35em;
+    vertical-align: middle;
+    background: url("../images/icon-more.svg") no-repeat center / contain;
     opacity: 0.45;
   }
 
@@ -417,7 +427,7 @@ a {
     justify-content: center;
     gap: var(--rail-gap);
     position: fixed;
-    top: 180px;
+    top: 140px;
     right: 180px;
     bottom: 0;
     z-index: 150;
@@ -1825,7 +1835,8 @@ h1.section__title--cases-page {
 }
 
 /* Contact */
-.contact-box h3 {
+.contact-box h3,
+.form__title {
   margin: 0 0 16px;
   font-size: 14px;
   font-weight: 700;
@@ -1932,6 +1943,41 @@ h1.section__title--cases-page {
   border: 1px solid #bbb;
   border-radius: 4px;
   margin-bottom: 14px;
+}
+
+/* プルダウン：OS／ブラウザ既定の矢印をやめ、images/icon-more.svg を90°回転して下向きに統一 */
+.form-select-wrap {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.form-select-wrap select {
+  margin-bottom: 0;
+}
+
+.form-select-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 8px;
+  height: 11px;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  background: url("../images/icon-more.svg") no-repeat center / contain;
+  pointer-events: none;
+}
+
+.form select {
+  padding: 12px 42px 12px 12px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.form select::-ms-expand {
+  display: none;
 }
 
 .form textarea {

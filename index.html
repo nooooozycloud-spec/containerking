@@ -489,11 +489,11 @@
             <div class="works-section-cta">
               <a class="btn btn--works-more" href="cases-exterior.html"
                 >外観一覧を見る<img
-                  src="images/cases_icon.svg"
+                  src="images/icon-more.svg"
                   alt=""
                   class="btn--works-more__icon"
-                  width="20"
-                  height="20"
+                  width="10"
+                  height="14"
                   decoding="async"
               /></a>
             </div>
@@ -543,11 +543,11 @@
             <div class="works-section-cta">
               <a class="btn btn--works-more" href="cases-interior.html"
                 >内装事例一覧を見る<img
-                  src="images/cases_icon.svg"
+                  src="images/icon-more.svg"
                   alt=""
                   class="btn--works-more__icon"
-                  width="20"
-                  height="20"
+                  width="10"
+                  height="14"
                   decoding="async"
               /></a>
             </div>
@@ -628,7 +628,7 @@
                   <span class="checkpoint__badge-point">★POINT★</span>
                 </div>
                 <p class="checkpoint__lead">
-                  完成後に見えない場所だからこそ、<span
+                  完成後に見えない場所だからこそ、<br><span
                     class="checkpoint__lead-accent"
                     >下地加工の工程</span
                   >をご確認いただけます。
@@ -811,6 +811,7 @@
                 </div>
               </div>
               <form class="form" action="#" method="post">
+                <h3 class="form__title">お問い合わせフォーム</h3>
                 <label>お名前 <span class="req">*</span></label>
                 <input type="text" name="name" required autocomplete="name" />
                 <label>フリガナ <span class="req">*</span></label>
@@ -826,13 +827,15 @@
                 <label>電話番号</label>
                 <input type="tel" name="tel" autocomplete="tel" />
                 <label>ご検討の用途</label>
-                <select name="use">
-                  <option>40FT / その他</option>
-                  <option>12FT</option>
-                  <option>20FT</option>
-                  <option>40FT</option>
-                  <option>その他</option>
-                </select>
+                <div class="form-select-wrap">
+                  <select name="use">
+                    <option>40FT / その他</option>
+                    <option>12FT</option>
+                    <option>20FT</option>
+                    <option>40FT</option>
+                    <option>その他</option>
+                  </select>
+                </div>
                 <label>ご相談内容・ご質問などご自由にご記入ください</label>
                 <textarea name="message"></textarea>
                 <button class="btn btn--submit" type="submit">送信する</button>
