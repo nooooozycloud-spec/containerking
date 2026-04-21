@@ -2162,10 +2162,16 @@ h1.section__title--cases-page {
   filter: none;
 }
 
-/* フッター SNS：暗背景上でアイコンを白表示（LINE/X/Instagram/TikTok 共通） */
+/* フッター SNS：暗背景上でアイコンを白表示（LINE/TikTok は色付き SVG を filter で白化） */
 .site-footer .footer-sns .sns-icon img {
   filter: brightness(0) invert(1);
   opacity: 0.95;
+}
+
+/* Instagram は既に白ベクター SVG のため filter を外す（モバイル GPU 描画でぼける現象を回避） */
+.site-footer .footer-sns .sns-icon[aria-label="Instagram"] img {
+  filter: none;
+  image-rendering: auto;
 }
 
 .form label {
