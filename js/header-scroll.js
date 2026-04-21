@@ -29,6 +29,10 @@
 
   var spyMq = window.matchMedia("(min-width: 1201px)");
   var spyRaf = 0;
+  /* スムーズスクロール中は中間セクションが順次アクティブ化されないよう、ターゲット ID を固定する */
+  var spyLockedTargetId = null;
+  var spyUnlockTimer = 0;
+  var spyUnlockFallback = 0;
 
   /* MV（.hero）下端が画面上端を通過したらロゴ表示（戻すときはヒステリシス） */
   var LOGO_SHOW_HERO_BOTTOM = 4;
@@ -128,7 +132,12 @@
       clearRailActive();
       return;
     }
-    if (!spyMq.matches || !railNavLinks || railNavLinks.length === 0) return;
+    if (!railNavLinks || railNavLinks.length === 0) return;
+    /* ロック中はターゲット ID に固定（スムーズスクロール中の中間「なぞり」発生を抑止） */
+    if (spyLockedTargetId) {
+      setRailActive(spyLockedTargetId);
+      return;
+    }
     var y = window.scrollY || window.pageYOffset || 0;
     if (y < 72) {
       clearRailActive();
@@ -140,8 +149,41 @@
     }
   }
 
+  function lockSpyTo(id) {
+    spyLockedTargetId = id;
+    setRailActive(id);
+    if (spyUnlockFallback) clearTimeout(spyUnlockFallback);
+    /* 万一スクロールが発火しない／途中で止まったケースのための最終解除 */
+    spyUnlockFallback = window.setTimeout(function () {
+      spyUnlockFallback = 0;
+      unlockSpy();
+    }, 1500);
+  }
+
+  function unlockSpy() {
+    if (!spyLockedTargetId) return;
+    spyLockedTargetId = null;
+    if (spyUnlockTimer) {
+      clearTimeout(spyUnlockTimer);
+      spyUnlockTimer = 0;
+    }
+    if (spyUnlockFallback) {
+      clearTimeout(spyUnlockFallback);
+      spyUnlockFallback = 0;
+    }
+    updateScrollSpy();
+  }
+
+  function scheduleSpyUnlock() {
+    /* スクロールが 120ms 止まったらロック解除（＝スクロール終了とみなす） */
+    if (spyUnlockTimer) clearTimeout(spyUnlockTimer);
+    spyUnlockTimer = window.setTimeout(function () {
+      spyUnlockTimer = 0;
+      unlockSpy();
+    }, 120);
+  }
+
   function scheduleScrollSpy() {
-    if (!spyMq.matches) return;
     if (spyRaf) return;
     spyRaf = window.requestAnimationFrame(function () {
       spyRaf = 0;
@@ -168,20 +210,13 @@
         navToggle.checked = false;
       }
       if (SPY_SECTION_IDS.indexOf(id) !== -1) {
-        setRailActive(id);
+        lockSpyTo(id);
       }
       try {
         history.pushState(null, "", href);
       } catch (err) {
         location.hash = href;
       }
-      /* スムーズスクロール終了後も位置に合わせて再計算 */
-      window.setTimeout(function () {
-        updateScrollSpy();
-      }, 450);
-      window.setTimeout(function () {
-        updateScrollSpy();
-      }, 900);
     });
   }
 
@@ -189,6 +224,10 @@
     updateHeaderScrolled();
     updateLogoAfterHero();
     scheduleScrollSpy();
+    /* ロック中はスクロールが止まったタイミングで解除 */
+    if (spyLockedTargetId) {
+      scheduleSpyUnlock();
+    }
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -207,11 +246,7 @@
   }
 
   spyMq.addEventListener("change", function () {
-    if (!spyMq.matches) {
-      clearRailActive();
-    } else {
-      updateScrollSpy();
-    }
+    updateScrollSpy();
     updateLogoAfterHero();
   });
 
