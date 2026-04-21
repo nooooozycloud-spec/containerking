@@ -49,7 +49,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: var(--color-text);
-  background-color: #1a1f2e;
+  background-color: var(--color-stroke-dark);
   background-image: url("../images/site-bg.jpg?v=2");
   background-size: cover;
   background-position: center center;
@@ -834,7 +834,7 @@ a {
 .menu-toggle {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 .menu-btn {
@@ -940,6 +940,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.06em;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn--line:hover {
@@ -949,6 +950,7 @@ a {
 
 .btn--line__text {
   color: #fff;
+  white-space: nowrap;
 }
 
 .btn--line__icon {
@@ -957,6 +959,18 @@ a {
   filter: brightness(0) invert(1);
   display: block;
   flex-shrink: 0;
+}
+
+/* SP版は幅とパディングを調整して「LINEで問い合わせする」が折り返さないようにする */
+@media (max-width: 1200px) {
+  .btn--line {
+    width: 100%;
+    max-width: 290px;
+    padding: 12px 16px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    gap: 8px;
+  }
 }
 
 /* ----- Hero（section-fv） ----- */
@@ -2221,13 +2235,19 @@ h1.section__title--cases-page {
 @supports (-webkit-touch-callout: none) {
   .form-select-wrap {
     overflow: hidden;
+    border: 1px solid #bbb;
     border-radius: 4px;
+    background: #fff;
   }
 
+  /* クリップで select 本体の右ボーダーが見えなくなるため、
+     枠線は .form-select-wrap 側で描画し、select からは除去 */
   .form-select-wrap select {
     width: calc(100% + 52px);
     max-width: none;
     margin-right: -52px;
+    border: none;
+    background-color: transparent;
   }
 }
 
@@ -2252,13 +2272,15 @@ h1.section__title--cases-page {
 }
 
 .form .btn--submit {
-  width: 100%;
+  width: 60%;
   padding: 14px;
   background: var(--color-text);
   color: #fff;
   border-radius: 33px;
   margin-top: 4px;
   font-size: 14px;
+  display: block;
+  margin: 4px auto;
 }
 
 /* 送信ボタン：PCでは中央配置で幅50% */
@@ -2266,8 +2288,7 @@ h1.section__title--cases-page {
   .form .btn--submit {
     width: 50%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 }
 
