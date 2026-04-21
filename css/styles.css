@@ -35,6 +35,9 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* iOS Safari のラバーバンド（上下のオーバースクロール領域）と
+     ブラウザクロームの背景色に反映される */
+  background-color: #0a0a0a;
 }
 
 /* アンカー遷移時に固定ヘッダー分の余白（スクロールスパイ／スムーズスクロール） */
