@@ -843,8 +843,7 @@ a {
 .menu-btn {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border: 1px solid var(--color-stroke-dark);
   background: #fff;
   padding: 0;
   cursor: pointer;
@@ -904,6 +903,7 @@ a {
   border-radius: 33px;
   flex-shrink: 0;
   letter-spacing: 0.1em;
+  border: 1px solid #fff;
 }
 
 .btn--hero-primary {
@@ -1299,10 +1299,10 @@ a {
 
 /* チェックポイント（バッジ＋説明＋3×2 写真グリッド works_check01–06、296×216 比率） */
 .checkpoint {
-  margin-top: 28px;
+  margin-top: 32px;
   margin-left: calc(-1 * var(--gutter));
   margin-right: calc(-1 * var(--gutter));
-  padding: 60px var(--gutter) 60px;
+  padding: 32px var(--gutter) 60px;
   background: #f3f3f3;
 }
 
@@ -1416,7 +1416,7 @@ a {
   background: #0a0a0a;
   color: #fff;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.04em;
   line-height: 1.2;
   box-sizing: border-box;
@@ -1436,7 +1436,7 @@ a {
 
 .custom-card__tags .tag {
   min-width: 0;
-  width: 80%;
+  width: 83%;
   justify-content: center;
   font-size: 12px;
   padding: 14px 8px;
@@ -1552,8 +1552,7 @@ h1.section__title--cases-page {
 
 .pricing-note {
   text-align: center;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -1687,7 +1686,7 @@ h1.section__title--cases-page {
   margin: 0;
   padding: 10px 20px;
   list-style: none;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--color-text-secondary);
   background: #f9f9f9;
@@ -1900,13 +1899,27 @@ h1.section__title--cases-page {
   margin-top: 8px;
 }
 
+/* 施工事例ギャラリー：枚数表示はパネル内ではなく画面右下に固定（閉じるボタンと同じビューポート基準） */
 .image-modal__pager {
-  margin: 0 0 8px;
+  position: fixed;
+  z-index: 9;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  left: auto;
+  margin: 0;
+  width: max-content;
+  max-width: calc(100vw - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
+  padding: 8px 14px;
+  border-radius: 8px;
   text-align: center;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: rgb(255 255 255 / 0.88);
+  color: rgb(255 255 255 / 0.95);
+  background: rgb(0 0 0 / 0.55);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
 }
 
 .image-modal__pager[hidden] {
@@ -2079,9 +2092,9 @@ h1.section__title--cases-page {
   padding: 10px 20px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-flow-muted);
 }
 
 /* Contact */
@@ -2092,6 +2105,7 @@ h1.section__title--cases-page {
   font-weight: 700;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--color-border);
+
 }
 
 .contact-row {
