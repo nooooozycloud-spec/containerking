@@ -63,7 +63,7 @@ body {
 /* 背景画像の上に薄い白を重ねる（body に filter すると文字もかかるため擬似要素で分離） */
 body::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
