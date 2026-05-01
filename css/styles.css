@@ -752,7 +752,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 0 20px;
+    gap: 0 12px;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -1407,39 +1407,66 @@ a {
 .custom-list--grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 16px;
 }
 
 .custom-card {
+  --custom-folder-border: rgb(10 10 10 / 14%);
+  --custom-folder-fill: rgb(245 245 245);
   margin: 0;
   padding: 0;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  border: none;
+  overflow: visible;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 
-/* カスタム例タイトル：左上から伸びる黒バナー（右端を斜めにカット） */
-.custom-card__title {
+/* フォルダのタブ（上段・左約1/3）。右下を丸めて本体との取り合いを滑らかに */
+.custom-card__tab {
+  box-sizing: border-box;
+  align-self: flex-start;
+  width: 38%;
+  min-width: min(7.5rem, 100%);
+  max-width: 75%;
+  margin: 0;
+  margin-bottom: -1px;
+  padding: 8px 10px 5px;
+  z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--custom-folder-border);
+  border-bottom: 1px solid transparent;
+  border-radius: 4px 4px 4px 0;
+  background: var(--custom-folder-fill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* メイン台紙（下段・幅いっぱい） */
+.custom-card__body {
+  flex: 1 1 auto;
   margin: 0;
-  padding: 8px 26px 8px 14px;
-  width: 56%;
-  min-width: max-content;
-  max-width: 80%;
-  background: #0a0a0a;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
+  min-width: 0;
+  border: 1px solid var(--custom-folder-border);
+  border-radius: 0 4px 4px 4px;
+  background: var(--custom-folder-fill);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* タブ内タイトル */
+.custom-card__title {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  line-height: 1.2;
-  box-sizing: border-box;
-  /* 右端を斜めに切り落としてバナー形状にする */
-  clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+  line-height: 1.35;
+  color: var(--color-text);
 }
 
 .custom-card__tags {
@@ -1449,7 +1476,7 @@ a {
   gap: 6px;
   justify-content: center;
   align-items: center;
-  padding: 16px 14px 18px;
+  padding: 16px 14px 16px;
 }
 
 .custom-card__tags .tag {
@@ -2141,7 +2168,7 @@ h1.section__title--cases-page {
 }
 
 .contact-sns-label {
-  margin: 24px 0 10px;
+  margin: 24px 0 6px;
   padding-top: 24px;
   border-top: 1px solid var(--color-border);
   font-size: 13px;
